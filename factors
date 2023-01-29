@@ -24,7 +24,7 @@ if __name__ == '__main__':
     """open function is used to assign the file to a variable file
     using the for loop to read the file line by line
     the int function converts the file line to an integer
-    it calls the factorize function which returns a tuple 
+    it calls the factorize function which returns a tuple
         that is stored in p and q respectively"""
 
     with open(filename) as file:
