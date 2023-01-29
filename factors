@@ -1,0 +1,34 @@
+#!/usr/bin/python3
+
+
+import sys
+
+"""
+this function factorizes the numbers in a given file
+"""
+
+
+def factorize(n):
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return i, n // i
+    return n, 1
+
+
+if __name__ == '__main__':
+    if len(sys.argv) != 2:
+        print("Usage: factors <file>")
+        sys.exit(1)
+
+    filename = sys.argv[1]
+    """open function is used to assign the file to a variable file
+    using the for loop to read the file line by line
+    the int function converts the file line to an integer
+    it calls the factorize function which returns a tuple 
+        that is stored in p and q respectively"""
+
+    with open(filename) as file:
+        for line in file:
+            n = int(line)
+            p, q = factorize(n)
+            print(f"{n}={q}*{p}")
